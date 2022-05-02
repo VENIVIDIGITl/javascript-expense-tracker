@@ -1,14 +1,174 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+  --box-shadow: 0 3px 30px rgba(0, 0, 0, 0.23), 0 2px 2px rgba(0, 0, 0, 0.24);
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  background: #fff;
+  background-image: linear-gradient(15deg, #13547a 0%, #c5fef7 100%);
+
+  font-family: 'Lato', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
   margin: 0;
+}
+
+.container {
+  background: #fff;
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  margin: 30px auto;
+}
+
+h1 {
+  color: #000;
+  font-size: 38px;
+}
+
+h2 {
+  letter-spacing: 1px;
+  font-size: 32px;
+  margin: 0;
+}
+
+h3 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #bbb;
+  margin: 40px 10px 10px;
+}
+
+h4 {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.balance {
+  margin-left: 15px;
+}
+
+h4.balance {
+  margin-top: 10px;
+}
+
+.inc-exp-container {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.inc-exp-container > div {
+  flex: 1;
+  text-align: center;
+}
+
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid #dedede;
+}
+
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.plus {
+  color: #2ecc71;
+}
+
+.money.minus {
+  color: #c0392b;
+}
+
+label {
+  display: inline-block;
+  margin: 10px;
+}
+
+input[type='text'],
+input[type='number'] {
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dedede;
+  border-radius: 2px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.btn {
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  background-color: #1e6b98;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  box-shadow: var(--box-shadow);
+  margin: 10px 0 30px;
+}
+
+.btn:focus,
+.delete-btn:focus {
+  outline: none;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.list li {
+  position: relative;
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  box-shadow: var(--box-shadow);
+  margin: 10px 0;
+}
+
+.list li.plus {
+  border-right: 5px solid #2ecc71;
+}
+
+.list li.minus {
+  border-right: 5px solid #c0392b;
+}
+
+.delete-btn {
+  position: absolute;
+  cursor: pointer;
+  background-color: #e74c3c;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  border: none;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
 }
